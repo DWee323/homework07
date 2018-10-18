@@ -107,7 +107,7 @@ const divideSim = (num1, num2) => {
 
 //DIVIDE
 const divide = (num1, num2) => {
-    if (typeof num1 === 'number' && typeof num2 === 'number') {
+    if (typeof num1 === 'number' && typeof num2 === 'number' && num2 != 0) {
         let ans = num1 / num2;
         ans = ans.toFixed(2);
         ans = parseFloat(ans);
@@ -121,27 +121,40 @@ divide(2, 1),  // returns 2
 divide(1, 2),  // returns 0.5
 divide(1, 3),  // returns 0.33
 divide(0, 10),  // returns 0
-
+ 
 //Darn it, this gives me Infinity > should I give another condition "&& num2 != 0"?: I am unsure if mathematically /0 is undefined or infinity or unable...
 divide(10, 0),  // returns "Error"
 );
 
 
-//POWER
-const power = (base, exponent) => {
-    let answer = 1;
-    for (let i = 0 ; i < exponent ; i++) {
-        answer = answer * base;
-    }
-    return answer;
-};
-
-//SQUARE 
+/*
+//SQUARE SIMPLE
 const square = (num) => {
     return num * num ;
 };
+*/
 
-//CUBE 
+//SQUARE
+const square = (num) => {
+    if (typeof num === 'number') {
+        let ans = num * num;
+        ans = ans.toFixed(2);
+        ans = parseFloat(ans);
+        return ans;        
+    } 
+    return "Error!";
+};
+
+console.log(square(7),
+square(2),  // returns 4 (which is 2^2)
+square(1),  // returns 1 (which is 1^2)
+square(10),  // returns 100 (which is 100^2)
+square("Hello"), 
+);
+
+
+/*
+//CUBE SIMPLE
 const cube = (num) => {
     let answer = 1;
     for (let i=0; i<3; i++) {
@@ -149,8 +162,40 @@ const cube = (num) => {
     }
     return answer;
 };
+*/
+
+//CUBE
+const cube = (num) => {
+    if (typeof num === 'number') {
+        let ans = 1;
+        for (let i=0; i<3; i++) {
+        ans = ans * num;
+        }
+        ans = ans.toFixed(2);
+        ans = parseFloat(ans);
+        return ans;        
+    } 
+    return "Error!";
+};
+
+console.log(cube(7),
+cube(2),  // returns 8 (which is 2^3)
+cube(1),  // returns 1 (which is 1^3)
+cube(10),  // returns 1000000 (which is 100^3) > NOPE: 10^3 = 1000, cube(100) = 100^3 = 1000000
+square("Hello"), 
+);
 
 
+
+
+//POWER SIMPLE
+const power = (base, exponent) => {
+    let answer = 1;
+    for (let i = 0 ; i < exponent ; i++) {
+        answer = answer * base;
+    }
+    return answer;
+};
 
 
 
