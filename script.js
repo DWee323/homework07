@@ -1,7 +1,5 @@
 //The final file should just the functions, no console.log calls or function calls.
 
-//The following tasks do not need to be done in order. I will review the final file.
-
 //For all functions, be sure to return a string "Error" 
 //if any of the parameters 
 //are missing, 
@@ -9,8 +7,6 @@
 //or have other mathmatical errors.
 
 //Take time and be efficient with your code.
-
-//If you don't remember some of this math, use google to refresh your mind.
 
 // for FUNCTIONS: INCLUDE {} AND 'returns' even in ARROW FUNCTIONS
 
@@ -211,7 +207,7 @@ const power = (base, exponent) => {
     return "Error!";
 };
 
-//WHY all of a suddent are you returning Error that is a different type as the above functions?????
+//WHY all of a sudden are you returning Error that is a different type as the above functions?????
 console.log(power(7), //returns error, which is expected
 power(2, 1),  // returns 2 (which is 2^1)
 power(1, 2),  // returns 1 (which is 1^2)
@@ -251,9 +247,27 @@ modulo("Hello"),
 
 
 
-
-
 //SQUARE ROOT: n^(1/2)
+const squareRoot = (num) => {
+    if (typeof num === 'number' && num >= 0) {
+        
+        let sqrt_int = 0;
+        for (let i = 0 ; (i+1)*(i+1) <= num ; i++) {
+            sqrt_int = sqrt_int + 1;
+        }
+        sqrt_int = sqrt_int.toFixed(2);
+        sqrt_int = parseFloat(sqrt_int);
+        return sqrt_int;        
+    } 
+    return "Error!";
+};
+
+console.log(squareRoot(100),
+squareRoot(101),
+squareRoot(99),
+squareRoot(1000),
+squareRoot(-100),
+);
 //power function, other functions within functions
 /*여기서부터 헷갈리고 있어
 const square_root = (num) => {
