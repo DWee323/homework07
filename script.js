@@ -10,14 +10,8 @@
 
 // for FUNCTIONS: INCLUDE {} AND 'returns' even in ARROW FUNCTIONS
 
+//to myself: maybe make a function of converting a var into 2 dec points and parsefloating and calling that func. every time
 
-/*
-//ADD SIMPLE
-const addSim = (num1, num2) => {
-    return num1 + num2;
-};
-console.log(addSim(7, 22));
-*/
 
 //ADD
 const add = (num1, num2) => {
@@ -39,13 +33,6 @@ add("Hello"),  // return "Error");
 );
 
 
-/*
-//SUBRTRACT SIMPLE
-const subtractSim = (num1, num2) => {
-    return num1 - num2;
-};
-*/
-
 //SUBRTRACT
 const subtract = (num1, num2) => {
     if (typeof num1 === 'number' && typeof num2 === 'number') {
@@ -65,13 +52,6 @@ subtract(),  // return "Error"
 subtract("Hello"),  // return "Error"
 );
 
-
-/*
-//MULTIPLY SIMPLE
-const multiplySim = (num1, num2) => {
-    return num1 * num2;
-}; 
-*/
 
 //MULTIPLY
 // (would've loved if the function name were multiply to keep the part of speech consistent)
@@ -94,17 +74,11 @@ multiple("Hello"),  // return "Error"
 );
 
 
-/*
-//DIVIDE SIMPLE
-const divideSim = (num1, num2) => {
-    return num1 / num2;
-};
-*/
-
 //DIVIDE
-const divide = (num1, num2) => {
-    if (typeof num1 === 'number' && typeof num2 === 'number' && num2 != 0) {
-        let ans = num1 / num2;
+const divide = (dividend, divisor) => {
+    //one more condition to check if the divisor is not zero
+    if (typeof dividend === 'number' && typeof divisor === 'number' && divisor != 0) {
+        let ans = dividend / divisor;
         ans = ans.toFixed(2);
         ans = parseFloat(ans);
         return ans;        
@@ -117,18 +91,9 @@ divide(2, 1),  // returns 2
 divide(1, 2),  // returns 0.5
 divide(1, 3),  // returns 0.33
 divide(0, 10),  // returns 0
- 
-//Darn it, this gives me Infinity > should I give another condition "&& num2 != 0"?: I am unsure if mathematically /0 is undefined or infinity or unable...
 divide(10, 0),  // returns "Error"
 );
 
-
-/*
-//SQUARE SIMPLE
-const squareSim = (num) => {
-    return num * num ;
-};
-*/
 
 //SQUARE
 const square = (num) => {
@@ -148,17 +113,6 @@ square(10),  // returns 100 (which is 100^2)
 square("Hello"), 
 );
 
-
-/*
-//CUBE SIMPLE
-const cubeSim = (num) => {
-    let answer = 1;
-    for (let i=0; i<3; i++) {
-        answer = answer * num;
-    }
-    return answer;
-};
-*/
 
 //CUBE
 const cube = (num) => {
@@ -182,17 +136,6 @@ cube("Hello"),
 );
 
 
-/*
-//POWER SIMPLE
-const powerSim = (base, exponent) => {
-    let answer = 1;
-    for (let i = 0 ; i < exponent ; i++) {
-        answer = answer * base;
-    }
-    return answer;
-};
-*/
-
 //POWER
 const power = (base, exponent) => {
     if (typeof base === 'number' && typeof exponent === 'number') {
@@ -207,7 +150,6 @@ const power = (base, exponent) => {
     return "Error!";
 };
 
-//WHY all of a sudden are you returning Error that is a different type as the above functions?????
 console.log(power(7), //returns error, which is expected
 power(2, 1),  // returns 2 (which is 2^1)
 power(1, 2),  // returns 1 (which is 1^2)
@@ -217,13 +159,6 @@ power(10, 10),  // returns 10000000000 (which is 10^10)
 power("Hello"), 
 );
 
-
-/*
-//MODULO SIMPLE 
-const moduloSim = (dividend, divisor) => {
-    return dividend % divisor;
-}
-*/
 
 //MODULO
 const modulo = (dividend, divisor) => {
@@ -244,7 +179,6 @@ modulo(10, 0),  // returns NaN
 modulo(10, 10),  // returns 10000000000 > NOPE: 0
 modulo("Hello"), 
 );
-
 
 
 //SQUARE ROOT: n^(1/2)
@@ -333,6 +267,8 @@ cubeRoot("bleh"), //error
 );
 
 
+/*
+
 //X ROOT: n^(1/x)
 const root = (num, x_root) => {
     if (typeof num === 'number' && typeof x_root === 'number') {
@@ -358,5 +294,9 @@ console.log(root(9,2),
 root(9,3),
 root(15625, 6), //returns 5
 );
+
+*/
+
+
 
 //power function, other functions within functions
