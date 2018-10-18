@@ -145,30 +145,16 @@ const cubeRoot = (num) => {
     if (typeof num === 'number' && num >= 0) {
         
         let cbrt_int = 0;
-        //let sqrt_tenth = 0;
-        //let sqrt_hundredth = 0;
-
+        
         for (let i = 0 ; (i+1)*(i+1)*(i+1) <= num ; i++) {
             cbrt_int = cbrt_int + 1;
         }  
-        /*
-        for (let j = 0 ; (sqrt_int + 0.1)*(sqrt_int + 0.1) < num && j < 10; j++) {
-            sqrt_tenth = sqrt_tenth + 0.1;
-        }
-        */
-  
-        /*
-        let sqrt_int = 0;
-        for (let i = 0 ; (i+1)*(i+1) <= num ; i++) {
-            sqrt_int = sqrt_int + 1;
-        }
-        */
 
-        let ans = cbrt_int /* + sqrt_tenth */ /* + sqrt_hundredth */;
+        let ans = cbrt_int;
         ans = ans.toFixed(2);
         ans = parseFloat(ans);
                 
-        return ans;        
+        return ans + " is the largest number, where x^3 does not exceed " + num + "." ;        
     } 
     return "Error!";
 };
