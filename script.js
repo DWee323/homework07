@@ -14,15 +14,16 @@
 
 // for FUNCTIONS: INCLUDE {} AND 'returns' even in ARROW FUNCTIONS
 
-//ADD
+
 /*
-const add2 = (num1, num2) => {
+//ADD SIMPLE
+const addSim = (num1, num2) => {
     return num1 + num2;
 };
-console.log(add(7, 22));
+console.log(addSim(7, 22));
 */
 
-//Try ADD again
+//ADD
 const add = (num1, num2) => {
     if (typeof num1 === 'number' && typeof num2 === 'number') {
         let ans = num1 + num2;
@@ -31,7 +32,7 @@ const add = (num1, num2) => {
         return ans;        
     } 
     return "Error!";
-}
+};
 
 console.log(add(7, 22),
 add(1, 2),  // returns 3
@@ -42,24 +43,89 @@ add("Hello"),  // return "Error");
 );
 
 
-
-console.log(add(7, 22));
-
+/*
+//SUBRTRACT SIMPLE
+const subtractSim = (num1, num2) => {
+    return num1 - num2;
+};
+*/
 
 //SUBRTRACT
 const subtract = (num1, num2) => {
-    return num1 - num2;
+    if (typeof num1 === 'number' && typeof num2 === 'number') {
+        let ans = num1 - num2;
+        ans = ans.toFixed(2);
+        ans = parseFloat(ans);
+        return ans;        
+    } 
+    return "Error!";
 };
 
-//MULTIPLY
-const multiply = (num1, num2) => {
+console.log(subtract(7, 22),
+subtract(2, 1),  // returns 1
+subtract(1, 2),  // returns -1
+subtract(0.3, 0.2),  // returns 0.1
+subtract(),  // return "Error"
+subtract("Hello"),  // return "Error"
+);
+
+
+/*
+//MULTIPLY SIMPLE
+const multiplySim = (num1, num2) => {
     return num1 * num2;
 }; 
+*/
 
-//DIVIDE 
-const divide = (num1, num2) => {
+//MULTIPLY
+// (would've loved if the function name were multiply to keep the part of speech consistent)
+const multiple = (num1, num2) => {
+    if (typeof num1 === 'number' && typeof num2 === 'number') {
+        let ans = num1 * num2;
+        ans = ans.toFixed(2);
+        ans = parseFloat(ans);
+        return ans;        
+    } 
+    return "Error!";
+};
+
+console.log(multiple(7, 22),
+multiple(2, 1),  // returns 1 > NOPE: 2
+multiple(1, 2),  // returns -1 > NOPE: 2
+multiple(0.1, 0.2),  // returns 0.02
+multiple(),  // return "Error"
+multiple("Hello"),  // return "Error"
+);
+
+
+/*
+//DIVIDE SIMPLE
+const divideSim = (num1, num2) => {
     return num1 / num2;
 };
+*/
+
+//DIVIDE
+const divide = (num1, num2) => {
+    if (typeof num1 === 'number' && typeof num2 === 'number') {
+        let ans = num1 / num2;
+        ans = ans.toFixed(2);
+        ans = parseFloat(ans);
+        return ans;        
+    } 
+    return "Error!";
+};
+
+console.log(divide(7, 22),
+divide(2, 1),  // returns 2
+divide(1, 2),  // returns 0.5
+divide(1, 3),  // returns 0.33
+divide(0, 10),  // returns 0
+
+//Darn it, this gives me Infinity > should I give another condition "&& num2 != 0"?: I am unsure if mathematically /0 is undefined or infinity or unable...
+divide(10, 0),  // returns "Error"
+);
+
 
 //POWER
 const power = (base, exponent) => {
