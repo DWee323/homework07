@@ -252,12 +252,30 @@ const squareRoot = (num) => {
     if (typeof num === 'number' && num >= 0) {
         
         let sqrt_int = 0;
+        //let sqrt_tenth = 0;
+        //let sqrt_hundredth = 0;
+
+        for (let i = 0 ; (i+1)*(i+1) <= num ; i++) {
+            sqrt_int = sqrt_int + 1;
+        }  
+        /*
+        for (let j = 0 ; (sqrt_int + 0.1)*(sqrt_int + 0.1) < num && j < 10; j++) {
+            sqrt_tenth = sqrt_tenth + 0.1;
+        }
+        */
+  
+        /*
+        let sqrt_int = 0;
         for (let i = 0 ; (i+1)*(i+1) <= num ; i++) {
             sqrt_int = sqrt_int + 1;
         }
-        sqrt_int = sqrt_int.toFixed(2);
-        sqrt_int = parseFloat(sqrt_int);
-        return sqrt_int;        
+        */
+
+        let ans = sqrt_int /* + sqrt_tenth */ /* + sqrt_hundredth */;
+        ans = ans.toFixed(2);
+        ans = parseFloat(ans);
+                
+        return ans;        
     } 
     return "Error!";
 };
@@ -265,37 +283,80 @@ const squareRoot = (num) => {
 console.log(squareRoot(100),
 squareRoot(101),
 squareRoot(99),
+squareRoot(5),
 squareRoot(1000),
-squareRoot(-100),
+squareRoot(-100), //error
+squareRoot(9),  // returns 3
+squareRoot(144),  // returns 12
 );
-//power function, other functions within functions
-/*여기서부터 헷갈리고 있어
-const square_root = (num) => {
-    return num * num ;
-};
 
-const power = (base, exponent) => {
-    let answer = 1;
-    for (let i = 0 ; i < exponent ; i++) {
-        answer = answer * base;
-    }
-    return answer;
-};
-*/
 
 //CUBE ROOT: n^(1/3)
+const cubeRoot = (num) => {
+    if (typeof num === 'number' && num >= 0) {
+        
+        let cbrt_int = 0;
+        //let sqrt_tenth = 0;
+        //let sqrt_hundredth = 0;
+
+        for (let i = 0 ; (i+1)*(i+1)*(i+1) <= num ; i++) {
+            cbrt_int = cbrt_int + 1;
+        }  
+        /*
+        for (let j = 0 ; (sqrt_int + 0.1)*(sqrt_int + 0.1) < num && j < 10; j++) {
+            sqrt_tenth = sqrt_tenth + 0.1;
+        }
+        */
+  
+        /*
+        let sqrt_int = 0;
+        for (let i = 0 ; (i+1)*(i+1) <= num ; i++) {
+            sqrt_int = sqrt_int + 1;
+        }
+        */
+
+        let ans = cbrt_int /* + sqrt_tenth */ /* + sqrt_hundredth */;
+        ans = ans.toFixed(2);
+        ans = parseFloat(ans);
+                
+        return ans;        
+    } 
+    return "Error!";
+};
+
+console.log(cubeRoot(8),
+cubeRoot(26),
+cubeRoot(27),
+cubeRoot(28),
+cubeRoot(-1000), //NOT error ideally, but I will deal with this later: right now this will give an error
+cubeRoot("bleh"), //error
+);
+
 
 //X ROOT: n^(1/x)
+const root = (num, x_root) => {
+    if (typeof num === 'number' && typeof x_root === 'number') {
+        
+        let root_val = 0;
+        for (let j = 0; j < ) {
+            root_val = root_val + 1;
 
-/*console.log( add(7, 22) );
-        subtract(7, 22),
-    multiply(3, 8),
-    divide(69, 2),
-    power(2, 5),
-    square(4),
-    cube(3),
-    modulo(36, 11))
-    */
-    //square_root(),
-    //cube_root(),
-    //x_root(, ),
+            for (let i = 0 ; i < x_root ; i++) {
+            root_val = root_val * root_val;
+            }
+            
+        }    
+        let ans = root_val;
+        ans = ans.toFixed(2);
+        ans = parseFloat(ans);
+        return ans;        
+    } 
+    return "Error!";
+};
+
+console.log(root(9,2),
+root(9,3),
+root(15625, 6), //returns 5
+);
+
+//power function, other functions within functions
