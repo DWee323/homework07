@@ -129,7 +129,7 @@ divide(10, 0),  // returns "Error"
 
 /*
 //SQUARE SIMPLE
-const square = (num) => {
+const squareSim = (num) => {
     return num * num ;
 };
 */
@@ -155,7 +155,7 @@ square("Hello"),
 
 /*
 //CUBE SIMPLE
-const cube = (num) => {
+const cubeSim = (num) => {
     let answer = 1;
     for (let i=0; i<3; i++) {
         answer = answer * num;
@@ -182,29 +182,76 @@ console.log(cube(7),
 cube(2),  // returns 8 (which is 2^3)
 cube(1),  // returns 1 (which is 1^3)
 cube(10),  // returns 1000000 (which is 100^3) > NOPE: 10^3 = 1000, cube(100) = 100^3 = 1000000
-square("Hello"), 
+cube("Hello"), 
 );
 
 
-
-
+/*
 //POWER SIMPLE
-const power = (base, exponent) => {
+const powerSim = (base, exponent) => {
     let answer = 1;
     for (let i = 0 ; i < exponent ; i++) {
         answer = answer * base;
     }
     return answer;
 };
+*/
+
+//POWER
+const power = (base, exponent) => {
+    if (typeof base === 'number' && typeof exponent === 'number') {
+        let ans = 1;
+        for (let i = 0 ; i < exponent ; i++) {
+            ans = ans * base;
+        }
+        ans = ans.toFixed(2);
+        ans = parseFloat(ans);
+        return ans;        
+    } 
+    return "Error!";
+};
+
+//WHY all of a suddent are you returning Error that is a different type as the above functions?????
+console.log(power(7), //returns error, which is expected
+power(2, 1),  // returns 2 (which is 2^1)
+power(1, 2),  // returns 1 (which is 1^2)
+power(0, 10),  // returns 0 (which is 0^10)
+power(10, 0),  // returns 1 (which is 10^0)
+power(10, 10),  // returns 10000000000 (which is 10^10)
+power("Hello"), 
+);
 
 
-
-//MODULO 
 /*
-const modulo = (dividend, divisor) => {
+//MODULO SIMPLE 
+const moduloSim = (dividend, divisor) => {
     return dividend % divisor;
 }
 */
+
+//MODULO
+const modulo = (dividend, divisor) => {
+    if (typeof dividend === 'number' && typeof divisor === 'number') {
+        let ans = dividend % divisor;
+        ans = ans.toFixed(2);
+        ans = parseFloat(ans);
+        return ans;        
+    } 
+    return "Error!";
+};
+
+console.log(modulo(7), //returns error, which is expected
+modulo(2, 1),  // returns 0
+modulo(1, 2),  // returns 1
+modulo(0, 10),  // returns 0
+modulo(10, 0),  // returns NaN
+modulo(10, 10),  // returns 10000000000 > NOPE: 0
+modulo("Hello"), 
+);
+
+
+
+
 
 //SQUARE ROOT: n^(1/2)
 //power function, other functions within functions
