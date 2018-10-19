@@ -159,7 +159,7 @@ const root = (num, x_root) => {
     if (typeof num === 'number' && typeof x_root === 'number') {
         let root_val = 0;
         let check = power(root_val, x_root);
-        for(let i = 0 ; i+1 < x_root ; i++){
+        for(let i = 0 ; i+1 < x_root && check <= num; i++){
             root_val = root_val + 1;
         }
         let ans = root_val;
