@@ -117,7 +117,7 @@ const squareRoot = (num) => {
         
         let sqrt_int = 0;
         
-        for (let i = 0 ; (i+1)*(i+1) <= num ; i++) {
+        for (let i = 0 ; square(i+1) <= num ; i++) {
             sqrt_int = sqrt_int + 1;
         }  
         
@@ -137,7 +137,7 @@ const cubeRoot = (num) => {
         
         let cbrt_int = 0;
         
-        for (let i = 0 ; (i+1)*(i+1)*(i+1) <= num ; i++) {
+        for (let i = 0 ; cube(i+1) <= num ; i++) {
             cbrt_int = cbrt_int + 1;
         }  
 
