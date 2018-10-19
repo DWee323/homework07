@@ -1,5 +1,5 @@
 //UPDATE: from last push, squareRoot & cubeRoot function gets the correct value to the second decimal point which was my goal.
-//This is for pushing as of now. All root functions outputs the largest 'integer' value that the pertinent exponent value does not exceed the number fed to the function. For the "perfect-power-numbers", the return values are mathematically correct. i.e. for the values given in the prompts to check, they work.
+//This is for pushing as of now. Only the root function outputs the largest 'integer' value that the pertinent exponent value does not exceed the number fed to the function. For the "perfect-power-numbers", the return values are mathematically correct. i.e. for the values given in the prompts to check, they work.
 
 //ADD
 const add = (num1, num2) => {
