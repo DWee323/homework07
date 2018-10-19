@@ -1,4 +1,4 @@
-//UPDATE: from last push, squareRoot function gets the correct value to the second decimal point which was my goal.
+//UPDATE: from last push, squareRoot & cubeRoot function gets the correct value to the second decimal point which was my goal.
 //This is for pushing as of now. All root functions outputs the largest 'integer' value that the pertinent exponent value does not exceed the number fed to the function. For the "perfect-power-numbers", the return values are mathematically correct. i.e. for the values given in the prompts to check, they work.
 
 //ADD
@@ -104,45 +104,52 @@ const squareRoot = (num) => {
         let sqrt_int = 0;            
         for (let i = 0 ; square(i+1) <= num ; i++) {
             sqrt_int = sqrt_int + 1;
-        }
-        
+        }        
         let sqrt_tenth = 0;        
         for (let i = 0 ; square(sqrt_int + sqrt_tenth + 0.1) <= num && i < 9 ; i++) {
             sqrt_tenth = sqrt_tenth + 0.1;
         }
-
         let sqrt_hundredth = 0;        
         for (let i = 0 ; square(sqrt_int + sqrt_tenth + sqrt_hundredth + 0.01) <= num && i < 9 ; i++) {
             sqrt_hundredth = sqrt_hundredth + 0.01;
         }
-
         //sqrt_thousandth: so that it rounds to the correct number
         let sqrt_thousandth = 0;
         for (let i = 0 ; square(sqrt_int + sqrt_tenth + sqrt_hundredth + sqrt_thousandth + 0.001) <= num && i < 9 ; i++) {
             sqrt_thousandth =  sqrt_thousandth + 0.001;
-        }        
-        
+        }              
         let ans = sqrt_int + sqrt_tenth + sqrt_hundredth +  sqrt_thousandth;
         ans = ans.toFixed(2);
-        ans = parseFloat(ans);
-                
+        ans = parseFloat(ans);                
         return ans;        
     } 
     return "Error!";
 };
 
-
 //CUBE ROOT: n^(1/3)
 const cubeRoot = (num) => {
     if (typeof num === 'number' && num >= 0) {        
         let cbrt_int = 0;        
-        for (let i = 0 ; cube(i+1) <= num ; i++) {
+        for (let i = 0 ; cube(i+1) < num ; i++) {
             cbrt_int = cbrt_int + 1;
         }  
-        let ans = cbrt_int;
+        let cbrt_tenth = 0;        
+        for (let i = 0 ; cube(cbrt_int + cbrt_tenth + 0.1) < num && i < 9 ; i++) {
+            cbrt_tenth = cbrt_tenth + 0.1;
+        }
+        let cbrt_hundredth = 0;        
+        for (let i = 0 ; cube(cbrt_int + cbrt_tenth + cbrt_hundredth + 0.01) < num && i < 9 ; i++) {
+            cbrt_hundredth = cbrt_hundredth + 0.01;
+        }
+        //cbrt_thousandth: so that it rounds to the correct number
+        let cbrt_thousandth = 0;
+        for (let i = 0 ; square(cbrt_int + cbrt_tenth + cbrt_hundredth + cbrt_thousandth + 0.001) < num && i < 9 ; i++) {
+            cbrt_thousandth = cbrt_thousandth + 0.001;
+        }              
+        let ans = cbrt_int + cbrt_tenth + cbrt_hundredth +  cbrt_thousandth;
         ans = ans.toFixed(2);
         ans = parseFloat(ans);                
-        return ans;        
+        return ans ;        
     } 
     return "Error!";
 };
