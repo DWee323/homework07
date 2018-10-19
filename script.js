@@ -111,6 +111,8 @@ const modulo = (dividend, divisor) => {
 };
 
 
+//"function within finctions" comes in handy from here on!
+
 //SQUARE ROOT: n^(1/2)
 const squareRoot = (num) => {
     if (typeof num === 'number' && num >= 0) {
@@ -151,65 +153,23 @@ const cubeRoot = (num) => {
 };
 
 
-/*
-
-//X ROOT: n^(1/x)
-const root = (num, x_root) => {
-
-    let root_val = 1;
-    let check = 1;
-
-    for(let i =0 ; i < x_root ; i++){
-        check = check * root_val;
-    }
-   
-    do {
-        root_val++;
-    } while (check < num);
-
-    let ans = root_val;
-    ans = ans.toFixed(2);
-    ans = parseFloat(ans);
-    return ans;
-}
-
-*/
-
-
-
-/*
-
 //X ROOT: n^(1/x)
 const root = (num, x_root) => {
     if (typeof num === 'number' && typeof x_root === 'number') {
-        
         let root_val = 0;
-        for (let j = 0; j < ) {
-            root_val = root_val + 1;
+        let check = power(root_val, x_root);
 
-            for (let i = 0 ; i < x_root ; i++) {
-            root_val = root_val * root_val;
-            }
-            
-        }    
+        for(let i = 0 ; i+1 < x_root ; i++){
+            root_val = root_val + 1;
+        }
+
         let ans = root_val;
         ans = ans.toFixed(2);
         ans = parseFloat(ans);
-        return ans;        
-    } 
-    return "Error!";
-};
-
-console.log(root(9,2),
-root(9,3),
-root(15625, 6), //returns 5
-);
-
-*/
-
-
-
-//power function, other functions within functions
+        return ans;
+    }
+    return "Error!"
+}
 
 
 console.log(add(7, 22),
@@ -295,9 +255,8 @@ cubeRoot(-1000), //NOT error ideally, but I will deal with this later: right now
 cubeRoot("bleh"), //error
 );
 
-/*
 console.log(root(9,2),
 root(9,3),
 root(15625, 6), //returns 5
+root(15625, "lalaLand"),
 );
-*/
